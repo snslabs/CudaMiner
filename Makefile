@@ -943,33 +943,33 @@ uninstall-am: uninstall-binPROGRAMS
 
 
 .cu.o:
-	$(NVCC) -g -O2 -Xptxas "-abi=no -v" -arch=sm_37 --maxrregcount=64 --ptxas-options=-v $(JANSSON_INCLUDES) -o $@ -c $<
+	$(NVCC) -g -O2 -Xptxas "-abi=yes -v" -arch=sm_37 --maxrregcount=64 --ptxas-options=-v $(JANSSON_INCLUDES) -o $@ -c $<
 
 sha256.o: sha256.cu
-	$(NVCC) -g -O2 -Xptxas "-abi=no -v" -arch=sm_37 --maxrregcount=64 --ptxas-options=-v $(JANSSON_INCLUDES) -o $@ -c $<
+	$(NVCC) -g -O2 -Xptxas "-abi=yes -v" -arch=sm_37 --maxrregcount=64 --ptxas-options=-v $(JANSSON_INCLUDES) -o $@ -c $<
 
 keccak.o: keccak.cu
-	$(NVCC) -g -O2 -Xptxas "-abi=no -v" -arch=sm_37 --maxrregcount=64 --ptxas-options=-v $(JANSSON_INCLUDES) -o $@ -c $<
+	$(NVCC) -g -O2 -Xptxas "-abi=yes -v" -arch=sm_37 --maxrregcount=64 --ptxas-options=-v $(JANSSON_INCLUDES) -o $@ -c $<
 
 # NOTE: now compiling for compute 1.0 again, as it's using less power and runs way faster on Linux
 fermi_kernel.o: fermi_kernel.cu
-	$(NVCC) -g -O2 -Xptxas "-abi=no -v" -arch=sm_37 --maxrregcount=64 $(JANSSON_INCLUDES) -o $@ -c $<
+	$(NVCC) -g -O2 -Xptxas "-abi=yes -v" -arch=sm_37 --maxrregcount=64 $(JANSSON_INCLUDES) -o $@ -c $<
 
 kepler_kernel.o: kepler_kernel.cu
-	$(NVCC) -g -O2 -Xptxas "-abi=no -v" -arch=sm_37 --maxrregcount=32 $(JANSSON_INCLUDES) -o $@ -c $<
+	$(NVCC) -g -O2 -Xptxas "-abi=yes -v" -arch=sm_37 --maxrregcount=32 $(JANSSON_INCLUDES) -o $@ -c $<
 
 titan_kernel.o: titan_kernel.cu
-	$(NVCC) -g -O2 -Xptxas "-abi=no -v" -arch=sm_37 --maxrregcount=32 $(JANSSON_INCLUDES) -o $@ -c $<
+	$(NVCC) -g -O2 -Xptxas "-abi=yes -v" -arch=sm_37 --maxrregcount=32 $(JANSSON_INCLUDES) -o $@ -c $<
 
 # NOTE: now compiling for compute 1.0 again, as it's using less power and runs way faster on Linux
 test_kernel.o: test_kernel.cu
-	$(NVCC) -g -O2 -Xptxas "-abi=no -v" -arch=sm_37 --maxrregcount=32 $(JANSSON_INCLUDES) -o $@ -c $<
+	$(NVCC) -g -O2 -Xptxas "-abi=yes -v" -arch=sm_37 --maxrregcount=32 $(JANSSON_INCLUDES) -o $@ -c $<
 
 nv_kernel.o: nv_kernel.cu
-	$(NVCC) -g -O2 -Xptxas "-abi=no -v" -arch=sm_37 --maxrregcount=63 $(JANSSON_INCLUDES) -o $@ -c $<
+	$(NVCC) -g -O2 -Xptxas "-abi=yes -v" -arch=sm_37 --maxrregcount=63 $(JANSSON_INCLUDES) -o $@ -c $<
 
 nv_kernel2.o: nv_kernel2.cu
-	$(NVCC) -g -O2 -Xptxas "-abi=no -v" -arch=sm_37 --maxrregcount=80 $(JANSSON_INCLUDES) -o $@ -c $<
+	$(NVCC) -g -O2 -Xptxas "-abi=yes -v" -arch=sm_37 --maxrregcount=80 $(JANSSON_INCLUDES) -o $@ -c $<
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
